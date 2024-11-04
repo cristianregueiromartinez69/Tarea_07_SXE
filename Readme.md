@@ -22,3 +22,52 @@ nano docker-compose.yml
 ```
 se nos abrirá el nano vacío y nos preparamos para editarlo :heart_eyes:
 
+### 2. crear estructura en docker-compose.yml de mysql :hushed:
+Ya estamos en el nano, así que escribimos esto en el docker-compose.yml
+```bash
+services:
+  db:
+    image: mysql:9.1.0
+    restart: unless-stopped
+    volumes:
+      - db_data_joomla:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456789
+      MYSQL_DATABASE: joomladb
+      MYSQL_USER: joomlauser
+      MYSQL_PASSWORD: 123456789
+```
+### EXPLICACIÓN: :grinning:
+```bash
+#services:
+Es como si fuera una lista de todos los servicios que queremos levantar con el docker compose
+```
+
+```bash
+#db:
+el nombre que le vamos a dar al contenedor del servicio de mysql, en este caso es db
+```
+
+```bash
+#image: mysql:9.1.0
+se descargará la imagen de mysql especificada con el tag
+```
+
+```bash
+#restart: unless-stopped
+indicamos que el servicio solo se apaga si lo paramos nosotros
+```
+
+```bash
+ #volumes:
+      #- db_data_joomla:/var/lib/mysql
+Esto es una mapeacion de sistemas de ficheros en donde se guardan las base de datos de mysql, es decir, si el contenedor se corrompe, se pierde o lo que sea, en este sistema de ficheros db_data_joomla:, se guardarán las bases de datos
+```
+
+```bash
+# environment:
+variables de entorno del servicio, tales como la contraseña root, usuario, password...
+```
+
+
+
