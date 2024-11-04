@@ -191,3 +191,59 @@ Variables de entorno de la aplicacion
 Estas son las variables globales de sistemas de ficheros que van a usar joomla y mysql, se declaran fuera de la lista de servicios para que sea accesible para todos ellos
 ```
 
+### 5. lanzar docker compose y comprobar joomla y mysql :blush:
+Nos metemos en la carpeta donde hemos hecho el docker compose y ejecutamos
+
+```bash
+sudo docker compose up -d
+```
+Esperamos un poco y debería de salir esto
+![servicioMaquinajoomlamysql](https://github.com/user-attachments/assets/59d47c76-8f48-4bab-bfd1-e150ccf5ac24)
+
+**Nos vamos a un navegador**
+
+```bash
+#introducimos en las url
+http://(tu_ip):8080
+```
+Cambias el (tu_ip) por la ip de la maquina virtual en caso de hacer esto en una máquina virtual o si no es máquina virtual pues la ip de tu ordenador. Debería de salir esto
+```bash
+#introducimos el nombre del joomla y avanzamos
+```
+![joomla1](https://github.com/user-attachments/assets/9a6fb9e2-d190-4657-b875-d5b93e402ab9)
+
+```bash
+#rellenamos los campos y avanzamos
+```
+![joomla2](https://github.com/user-attachments/assets/e7b1fe89-87e5-42d6-8c07-4642211017d1)
+
+```bash
+#rellenamos configuración de base de datos
+```
+![joomla3](https://github.com/user-attachments/assets/8fa8532e-56b2-4cd4-bb09-726bc9059436)
+
+### ATENCION :scream:
+- El nombre del servidor (hospedaje, como pone en la web) debe de coincidir con el nombre que le dimos a mysql en el docker-compose.yml, en este caso db
+
+```bash
+#si todo está bien, saldrá esto
+```
+![joomla4](https://github.com/user-attachments/assets/e8943d35-196d-48e8-ba84-b950224b95c4)
+
+
+```bash
+# rellenamos usuario y contraseña para iniciar sesión
+```
+![joomla5](https://github.com/user-attachments/assets/e3996706-07d3-4f07-9617-968dcc898b3f)
+
+```bash
+#si todo está bien, saldrá esto
+```
+![joomla6](https://github.com/user-attachments/assets/ef283cbe-6a26-4014-8674-5fc250bf2a24)
+
+**FELICIDADES, HAS INSTALADO JOOMLA Y MYSQL, AHORA PODRÁS JUGAR Y HACER LO QUE QUIERAS CON ELLOS :clap:
+
+
+
+
+
