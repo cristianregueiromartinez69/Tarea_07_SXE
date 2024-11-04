@@ -4,7 +4,7 @@
 - creación de carpeta y creacion del docker compose dentro de la carpeta creada
 - crear estructura en docker-compose.yml de mysql
 - crear estructura en docker-compose.yml de joomla
-- crear estructura en docker-compose.yml de phomyadmin
+- crear estructura en docker-compose.yml de phpmyadmin
 - lanzar docker compose y comprobar joomla y mysql
 - comprobar phpmyadmin
 
@@ -134,5 +134,60 @@ montamos un sistema de ficheros en la ruta especificada
 Variables de entorno del servicio, tales como nombre del servidor, usuario...
 ```
 
+### 4. crear estructura en docker-compose.yml de phpmyadmin :hushed:
+Seguimos en el docker-compose.yml e introducimos esto:
 
+```bash
+phmmyadmin:
+    image: phpmyadmin:5.2.1-apache
+    restart: unless-stopped
+    depends_on:
+      - db
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: 123456789
+
+
+volumes:
+  db_data_joomla:
+  joomla_data:
+```
+
+### EXPLICACION :grinning:
+
+```bash
+#image: phpmyadmin:5.2.1-apache
+descargamos la imagen indicada de php
+```
+
+```bash
+#restart: unless-stopped
+No paramos el servicio a menos que lo hagamos nosotros
+```
+
+```bash
+# depends_on:
+      #- db
+El servicio de phpmyadmin no empezará hasta que se cree el servidor de base de datos mysql ya que depende de un servidor de base de datos para administrarla
+```
+
+```bash
+#ports:
+      #- "8081:80"
+Lo mismo que con joomla, mapeamos los puertos para poder acceder al servidor de dentro del contenedor
+```
+
+```bash
+#environment:
+Variables de entorno de la aplicacion
+```
+
+```bash
+# volumes:
+  #db_data_joomla:
+  #joomla_data:
+Estas son las variables globales de sistemas de ficheros que van a usar joomla y mysql, se declaran fuera de la lista de servicios para que sea accesible para todos ellos
+```
 
