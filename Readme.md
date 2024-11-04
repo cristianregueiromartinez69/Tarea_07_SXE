@@ -241,8 +241,23 @@ Cambias el (tu_ip) por la ip de la maquina virtual en caso de hacer esto en una 
 ```
 ![joomla6](https://github.com/user-attachments/assets/ef283cbe-6a26-4014-8674-5fc250bf2a24)
 
-**FELICIDADES, HAS INSTALADO JOOMLA Y MYSQL, AHORA PODRÁS JUGAR Y HACER LO QUE QUIERAS CON ELLOS :clap:
+**FELICIDADES, HAS INSTALADO JOOMLA Y MYSQL, AHORA PODRÁS JUGAR Y HACER LO QUE QUIERAS CON ELLOS :clap:**
 
+
+### 6. comprobar phpmyadmin :blush:
+Nos vamos a la url y metemos esto
+```bash
+#http:/(tu_ip):8081
+```
+debería de salir esto:
+![phomyadmin1](https://github.com/user-attachments/assets/f44eb539-38b1-47b6-a8f2-4a667e8275e2)
+
+```bash
+#introducimos usuario y contraseña
+```
+![phomyadmin2](https://github.com/user-attachments/assets/a168e72c-6e11-4e54-b286-cdc17f67ce7e)
+
+**PERFECTO, HAS INSTALADO TAMBIÉN PHPMYADMIN, AHORA PODRÁS GESTIONAR TU BASE DE DATOS CÓMODAMENTE :clap:**
 
 
 
